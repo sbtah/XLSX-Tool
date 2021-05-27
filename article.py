@@ -16,6 +16,7 @@ class ITM_article():
     def average_delivery_per(self, period):
         """
         Return a value of average deliveries of unit per period specified.
+        The outcome depends on provided file. IE: if you have a file with data for 1 year, you provide 12 as a period to get average monthly data.
         """
         average_delivery_calculated = self.delivery / period
         return average_delivery_calculated
@@ -24,6 +25,7 @@ class ITM_article():
     def average_sales_per(self, period):
         """
         Return a value of average sales of unit per period specified.
+        The outcome depends on provided file. IE: if you have a file with data for 1 year, you provide 12 as a period to get average monthly data.
         """
         average_sales_calculated = self.sold / period
         return average_sales_calculated
@@ -31,8 +33,8 @@ class ITM_article():
 
     def end_unit_price(self):
         """
-        Return average stock for 3 months, given the xls file was made for a Year.
-        """#Change this comm.
+        Return a division on value_of_sales by sold wich is sales price of unit.    
+        """
         unit_price_calculated = self.value_of_sales / self.sold
         return unit_price_calculated
     
