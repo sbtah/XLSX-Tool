@@ -28,7 +28,11 @@ mt = MainTool()#This instanciate MainTool.
 new_raport = RaportLoader("Raport_Standard.xlsx")#Provides path to file.
 raport_loaded = new_raport.load_file()#Loads the specified file.
 
-
+#This loops over all rows and creates instances of ITM_article.
+for (itm, ean, name, brand, stock, sold, delivery, value_of_sales, value_FIFO, nan) in raport_loaded.iloc:
+    test_article = ITM_article(itm = itm, ean = ean, name = name, brand = brand, stock = stock , sold = sold, delivery = delivery, value_of_sales = value_of_sales, value_FIFO = value_FIFO)
+    if test_article.brand == "TOYA":
+        print(test_article.name)
 
 
 
